@@ -31,7 +31,7 @@ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 
 # --- Install Choco packages
-choco install 7zip.install googlechrome wget git starship firacodenf greenshot nodejs vscode eartrumpet file-converter microsoft-windows-terminal -y
+choco install 7zip.install googlechrome wget git starship firacodenf greenshot nodejs vscode eartrumpet file-converter microsoft-windows-terminal quicklook -y
 
 # --- Windows Package Manager Packages
 if (Get-Command 'winget' -errorAction SilentlyContinue) {
