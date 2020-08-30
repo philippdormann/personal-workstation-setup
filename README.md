@@ -8,6 +8,7 @@ automatically setup a fresh workstation for most of my needs
 - ⚡ Install my most used programs (or some that are at least really useful)
   - 🗜️ 7-Zip
   - wget
+  - QuickLook
   - git
   - 🚀 starship shell prompt
   - 📷 Greenshot
@@ -22,7 +23,7 @@ automatically setup a fresh workstation for most of my needs
   - 🌳 Gitlens
   - 👨‍💻 Editorconfig
   - ⚙ .env file syntax
-  - some themes 🎨
+  - 🎨 Themes
     - Halcyon
     - Mosaic
   - `🖊` TODO-Highlight
