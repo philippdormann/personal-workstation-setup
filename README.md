@@ -21,13 +21,16 @@ automatically setup a fresh workstation for most of my needs
   - DBeaver
   - VSCode
   - GPG4Win
+  - libreoffice
+  - Insomnia
+  - WinSCP
 - 🧩 VS-Code Extensions
   - 🌳 Gitlens
   - 👨‍💻 Editorconfig
   - ⚙ .env file syntax
   - 🎨 Themes
-    - Halcyon
-    - Mosaic
+    - Best Theme
+    - GitHub Theme
   - `🖊` TODO-Highlight
   - `//` Better Comments
   - `{` Bracket Pair Colorizer
