@@ -49,6 +49,10 @@ code --install-extension ms-azuretools.vscode-docker
 scoop install gpg4win
 
 # --- Done
-Write-Host "script is done" -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Write-Host "please add 'Invoke-Expression (&starship init powershell)' to '~\Documents\PowerShell\Microsoft.PowerShell_profile.ps1'" -ForegroundColor Green
+clear
+Write-Host "installation finished"
+Write-Host "------------------------------------"
+Write-Host "please add the following line to your powershell PROFILE"
+Write-Host "Invoke-Expression (&starship init powershell)" -ForegroundColor Green
+# 
+code $PROFILE
