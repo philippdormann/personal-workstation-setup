@@ -19,21 +19,13 @@ foreach ($uwp in $uwpRubbishApps) {
     Get-AppxPackage -Name $uwp | Remove-AppxPackage
 }
 
-# --- Choco Package Manager
-# Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-
 # --- Scoop Package Manager
-# Execution policy
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
-
-# --- Install Choco packages
-# choco install 7zip.install googlechrome wget git starship firacodenf greenshot nodejs vscode eartrumpet file-converter microsoft-windows-terminal quicklook -y
-
 # Scoop packages
 scoop install git
 scoop bucket add extras
-scoop install powertoys vscode 7zip googlechrome wget starship volta flameshot windows-terminal
+scoop install powertoys vscode 7zip googlechrome wget starship volta flameshot windows-terminal fork dbeaver thunderbird keepassxc firefox
 volta install node@latest
 # needs setup -> run at end
 scoop install gpg4win
@@ -47,8 +39,13 @@ code --install-extension oderwat.indent-rainbow
 code --install-extension vitoravelino.mosaic
 code --install-extension wayou.vscode-todo-highlight
 code --install-extension eamodio.gitlens
+code --install-extension mhutchie.git-graph
+code --install-extension kohlbachjan.the-best-theme
+code --install-extension github.github-vscode-theme
 code --install-extension aaron-bond.better-comments
 code --install-extension CoenraadS.bracket-pair-colorizer-2
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-azuretools.vscode-docker
 
 # --- Done
 Write-Host "script is done" -ForegroundColor Green
