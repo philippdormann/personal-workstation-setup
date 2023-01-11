@@ -27,8 +27,6 @@ scoop install git
 scoop bucket add extras
 scoop install powertoys vscode 7zip googlechrome wget starship volta flameshot windows-terminal fork dbeaver thunderbird keepassxc firefox vcredist2017 bat
 volta install node@latest pnpm@latest
-# needs setup -> run at end
-scoop install gpg4win
 
 # --- Install VS-Code Extensions
 code --install-extension EditorConfig.EditorConfig
@@ -46,6 +44,9 @@ code --install-extension aaron-bond.better-comments
 code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-azuretools.vscode-docker
+
+# needs setup -> run at end
+scoop install gpg4win
 
 # --- Done
 Write-Host "script is done" -ForegroundColor Green
