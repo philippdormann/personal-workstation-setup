@@ -25,7 +25,7 @@ iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 # Scoop packages
 scoop install git
 scoop bucket add extras
-scoop install powertoys vscode 7zip googlechrome wget starship volta flameshot windows-terminal fork dbeaver thunderbird keepassxc firefox vcredist2017
+scoop install powertoys vscode 7zip googlechrome wget starship volta flameshot windows-terminal fork dbeaver thunderbird keepassxc firefox vcredist2017 bat
 volta install node@latest pnpm@latest
 # needs setup -> run at end
 scoop install gpg4win
