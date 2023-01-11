@@ -1,4 +1,4 @@
-# personal-workstation-setup
+# @philippdormann/setup
 automatically setup a fresh workstation for most of my needs
 
 ## What will this script do?
