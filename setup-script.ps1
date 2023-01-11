@@ -1,6 +1,3 @@
-# --- Elevate Shell
-if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
-
 # --- set the screen timeout to 30 minutes, and disable auto sleep in AC power
 Powercfg /Change monitor-timeout-ac 30
 Powercfg /Change standby-timeout-ac 0
@@ -23,24 +20,23 @@ foreach ($uwp in $uwpRubbishApps) {
 }
 
 # --- Choco Package Manager
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+# Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # --- Scoop Package Manager
 # Execution policy
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 
 # --- Install Choco packages
-choco install 7zip.install googlechrome wget git starship firacodenf greenshot nodejs vscode eartrumpet file-converter microsoft-windows-terminal quicklook -y
+# choco install 7zip.install googlechrome wget git starship firacodenf greenshot nodejs vscode eartrumpet file-converter microsoft-windows-terminal quicklook -y
 
-# --- Windows Package Manager Packages
-if (Get-Command 'winget' -errorAction SilentlyContinue) {
-    winget install --id=Armin2208.WindowsAutoNightMode -e ;
-}else{
-    Write-Host ""
-    Write-Host "winget is not available" -ForegroundColor Green
-    Write-Host "------------------------------------" -ForegroundColor Green
-}
+# Scoop packages
+scoop install git
+scoop bucket add extras
+scoop install powertoys vscode 7zip googlechrome wget starship volta flameshot windows-terminal
+volta install node@latest
+# needs setup -> run at end
+scoop install gpg4win
 
 # --- Install VS-Code Extensions
 code --install-extension EditorConfig.EditorConfig
