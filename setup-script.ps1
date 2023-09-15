@@ -25,7 +25,7 @@ iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 # Scoop packages
 scoop install git
 scoop bucket add extras
-scoop install 7zip adb age android-sdk bat cloc composer corretto18-jdk dbeaver delta deno doggo duf fd firefox flameshot fork gh go googlechrome gping gsudo hadolint hugo hugo-extended hyperfine insomnia keepassxc lapce libreoffice librewolf lsd nano openssl php powertoys pwsh scc starship thunderbird ugrep vcredist2022 volta vscode wget windirstat windows-terminal winscp wixtoolset
+scoop install 7zip adb age android-sdk bat cloc composer corretto18-jdk dbeaver delta deno doggo duf fd firefox flameshot fork gh go googlechrome gping gsudo hadolint hugo hugo-extended hyperfine insomnia keepassxc lapce libreoffice librewolf lsd nano openssl php powertoys pwsh scc starship thunderbird ugrep vcredist2022 volta vscode wget windirstat windows-terminal extras/winscp wixtoolset
 volta install node@latest pnpm@latest
 
 # --- Install VS-Code Extensions
